@@ -11,8 +11,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (request, response) => {
-  response.send('hello world!');
+  response.send('GET request to root path!');
+  response.send(request);
 });
+
+app.get('/articles/new', (req, res) => {
+  // res.redirect('http://localhost:3000/new.html');
+  console.log(__dirname);
+  res.sendFile('public/data/hackerIpsum.json', {root: __dirname});
+})
 
 // DONE: Our files are in a public directory now so that we can load the static files in our browser window.
 app.use(express.static('public'));
@@ -24,5 +31,5 @@ app.post('/articles', (request, response) => {
 })
 
 app.listen(3000, () => {
-  console.log('things are happening!!');
+  console.log('things are on port 3000!!');
 })
