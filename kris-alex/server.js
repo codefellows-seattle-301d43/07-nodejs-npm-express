@@ -24,6 +24,11 @@ app.post('/articles', (request, response) => {
   response.send();
 });
 
+app.get('*', (req, resp) => {
+  debug('Missed the route');
+  resp.status(404).send('Not Found!');
+});
+
 app.listen(PORT, () => {
   debug(`Listening on ${PORT}`);
 });
