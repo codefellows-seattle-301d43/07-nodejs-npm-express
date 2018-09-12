@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/new', (request, response) => {
-  response.sendFile('new.html', {root: 'public'});
+  response.sendFile('/public/new.html', {root: __dirname});
 });
 
 app.post('/articles', (request, response) => {
