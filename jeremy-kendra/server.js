@@ -14,6 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
+app.get('/new', (req, res) => {
+  res.sendFile('new.html', {root: __dirname + '/public'});
+});
+
+
 app.post('/articles', (request, response) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   console.log(request.body);
