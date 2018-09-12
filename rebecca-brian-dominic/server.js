@@ -12,7 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (request, response) => {
   response.send('hello world!');
-})
+});
+
+// DONE: Our files are in a public directory now so that we can load the static files in our browser window.
+app.use(express.static('public'));
 
 app.post('/articles', (request, response) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
