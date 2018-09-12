@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 //Explain why our files are in a "public" directory now and how ExpressJS serves our local files.
-//Our files are in a "public" directory and Express gives us a way to take an entire directory (named "public") and serve static files to the client. 
+//Our files are in a "public" directory and Express gives us a way to take an entire directory (named "public") and serve static files to the client.
 
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware
