@@ -1,7 +1,7 @@
 # Kilovolt's Blog
 
 **Author**: Alex and Kris
-**Version**: 1.2.0
+**Version**: 1.3.0
 
 ## Overview
 
@@ -21,6 +21,7 @@
 
 ## Change Log
 
+- 09-12-2018 09:35am - Implement 'new' route for adding articles
 - 09-12-2018 09:08am - Implement basic server-side app to run our blog
 - 09-12-2018 08:53am - Read me created, project started
 
