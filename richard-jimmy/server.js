@@ -1,14 +1,16 @@
 'use strict';
 
 const express = require('express');
-const PORT = process.env.PORT || 6667;
+const PORT = process.env.PORT || 1666;
 const app = express();
 
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () => console.log(`The devil is listening on port ${PORT}`));
+app.get('/new.html', (request, response) => {
+  response.sendFile('new.html', {root: __dirname});
+});
 
 // this sets up express to serve any file in the public folder allowing requests to access every file in it.
 app.use(express.static('public'));
@@ -18,3 +20,5 @@ app.post('/articles', (request, response) => {
   console.log(request.body);
   response.status(201).json(request.body);
 });
+
+app.listen(PORT, () => console.log(`The devil is listening on port ${PORT}`));
