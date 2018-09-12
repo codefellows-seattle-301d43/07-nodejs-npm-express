@@ -25,7 +25,7 @@ Article.loadAll = articleData => {
   articleData.sort((a,b) => (new Date(b.publishedOn)) - (new Date(a.publishedOn)))
 
   articleData.forEach(articleObject => Article.all.push(new Article(articleObject)))
-}
+};
 
 Article.fetchAll = () => {
   if (localStorage.rawData) {
@@ -41,7 +41,7 @@ Article.fetchAll = () => {
         console.error(err);
       });
   }
-}
+};
 
 // REVIEW: This new prototype method on the Article object constructor will allow us to create a new article from the new.html form page, and submit that data to the back-end. We will see this log out to the server in our terminal!
 Article.prototype.insertRecord = function(callback) {
@@ -50,7 +50,7 @@ Article.prototype.insertRecord = function(callback) {
       console.log(data);
 
       // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      // This line fires the callback function if one was passed as a perameter to the insertRecord method. The callback function would be invoked if it was included as a perameter.
       if (callback) callback();
     })
 };
