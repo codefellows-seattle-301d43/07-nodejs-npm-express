@@ -14,6 +14,7 @@ HTML, JS, jQuery, ExpressJS, node
 
 ## Change Log
 
+09-12-18 11:20am Added more comments and fixed ESLint errors.
 09-12-18 9:55am Added comments.
 09-12-18 9:33am Server is working. 
 09-12-18 9:06am Initial file setup.
