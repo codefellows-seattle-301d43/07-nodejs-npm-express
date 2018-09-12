@@ -1,6 +1,5 @@
 'use strict';
 
-const debug = require('debug')('express');
 const path = require('path');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
@@ -12,23 +11,23 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/new', (req, resp) => {
-  debug(__dirname);
+  console.log(__dirname);
   resp.sendFile('new.html', { root: path.join(__dirname, 'public') });
 });
 app.post('/articles', (request, response) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   request.body = '{ "serverImplementation": "Kris and Alex" }';
-  debug(`Got POST request!`);
-  debug(request.body);
+  console.log(`Got POST request!`);
+  console.log(request.body);
   response.status(201).json(request.body);
   response.send();
 });
 
 app.get('*', (req, resp) => {
-  debug('Missed the route');
+  console.log('Missed the route');
   resp.status(404).send('Not Found!');
 });
 
 app.listen(PORT, () => {
-  debug(`Listening on ${PORT}`);
+  console.log(`Listening on ${PORT}`);
 });
