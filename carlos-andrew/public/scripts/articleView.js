@@ -75,7 +75,9 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// It is invoke on the bottom of new.hmtl, the event is triggered when someone goes to the route new.html. 
+//The sequence, the function is called when the user goes to the route programed to serve new.html 
+
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -88,7 +90,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// ANSWER: This is called when in the above function articleView.initNewArticlePage, The event displays the json when input or the textarea is changed. 
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -113,7 +115,8 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// ANSWER: This is called in the function articleView.initNewArticlePage, this is triggered when the sumbit button has been pushed.  
+
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -126,7 +129,7 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // ANSWER: this function is defined in article.js, the event that triggers it when the user has clicked on the submit. 
   article.insertRecord();
 }
 
