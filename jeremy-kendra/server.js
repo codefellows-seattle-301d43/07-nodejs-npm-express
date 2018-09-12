@@ -16,6 +16,12 @@ app.post('/articles', (request, response) => {
   response.status(201).json(request.body);
 });
 
+// Respond with 404 error if non-existent page requested
+app.use(function(req,res){
+  res.status(404);
+  res.send('Invalid request: page does not exist');
+});
+
 app.listen(PORT, () => {
   console.log(`server is running and listening on ${PORT}`);
 });
