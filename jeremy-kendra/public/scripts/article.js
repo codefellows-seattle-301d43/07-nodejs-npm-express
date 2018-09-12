@@ -50,7 +50,7 @@ Article.prototype.insertRecord = function(callback) {
       console.log(data);
 
       // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      // If a callback function has been passed to insertRecord() as an argument, then once the request gets a response from the server, then the callback() function will be invoked. It looks as if callback() will manage what to do if the request is 1)waiting, 2)successful, or 3)unsuccessful
       if (callback) callback();
     })
 };
