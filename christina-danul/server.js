@@ -22,6 +22,6 @@ app.post('/articles', (request, response) => {
   response.status(201).json(request.body);
 });
 
-app.listen(3000, () => {
-  console.log('we are listening!');
+app.listen(PORT, () => {
+  console.log(`we are listening on PORT: ${PORT}`);
 });

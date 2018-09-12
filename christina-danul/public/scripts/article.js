@@ -50,7 +50,8 @@ Article.prototype.insertRecord = function(callback) {
       console.log(data);
 
       // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      //This callback is never invoked because in articleView.js, on line 130, there is no argument included. 
+      
       if (callback) callback();
     })
 };
