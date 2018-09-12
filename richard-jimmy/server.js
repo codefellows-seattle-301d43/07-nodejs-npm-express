@@ -2,6 +2,7 @@
 
 const express = require('express');
 const PORT = process.env.PORT || 6667;
+const app = express();
 
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware
