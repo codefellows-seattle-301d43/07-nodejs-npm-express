@@ -38,6 +38,6 @@ app.use((req, res) => {
   res.sendFile('public/images/404cat.jpeg', { root: __dirname });
 });
 
-app.listen(3000, () => {
-  console.log('things are on port 3000!!');
+app.listen(PORT, () => {
+  console.log(`things are on port {PORT}!!`);
 });
