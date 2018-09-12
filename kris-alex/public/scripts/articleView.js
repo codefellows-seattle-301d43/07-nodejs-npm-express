@@ -75,7 +75,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// This is invoked in the new.html file; this event is triggered when the page is loaded; the function shows tab content, then the function hides the export field, then it sets an event listener on the article-json so that all of the contents are selected on focus; we set an event listener on the form listening for a change event on input and textarea.  This will invoke the articleView.create method. Finally, there is an event listener on the submit button which will invoke the articleView.submit function when invoked.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -88,7 +88,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called in the articleView.initNewArticlePage method.  It is triggered when the change event happens.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -113,7 +113,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called in the articleView.initNewArticlePage method.  It is triggered when the user submits the form.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -126,13 +126,13 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // It is defined in the article.js file on the article constructor; this function is called when the user submits the form in new.html; the submit event triggers its execution.
   article.insertRecord();
-}
+};
 
 articleView.initIndexPage = () => {
   Article.all.forEach(article =>{
-    $('#articles').append(article.toHtml())
+    $('#articles').append(article.toHtml());
   });
 
   articleView.populateFilters();
