@@ -10,9 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-// app.get('/red', (request, response) => {
-//   response.redirect('/');
-// });
 
 app.get('/new', (request, response) => {
   console.log(__dirname);
@@ -28,7 +25,9 @@ app.post('/articles', (request, response) => {
 
 app.get('*', (request, response) => {
   console.log('404');
-  response.redirect('/');
+  response.statusCode = 404;
+  console.log(response.statusCode);
+  response.send('404, page not found');
 });
 
 app.listen(PORT , () => {
