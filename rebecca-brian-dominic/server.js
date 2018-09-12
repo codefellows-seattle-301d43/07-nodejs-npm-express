@@ -3,6 +3,8 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 
+const app = express();
+
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware
 app.use(express.urlencoded({ extended: true }));
