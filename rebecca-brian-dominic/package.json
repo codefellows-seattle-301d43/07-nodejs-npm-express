@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/rh24/07-nodejs-npm-express#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "cors": "^2.8.4",
+    "nodemon": "1.18.4"
   }
 }
