@@ -75,7 +75,8 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// This function is invoked on the new.html page after getting the rawData. This function makes sure to show the tab content, then hides the export field label and sets the focus on the export textbox.
+// It then creates adds a handler to handle changes or submits to the form.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -88,7 +89,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called when the form is changed. This triggers from the change event on the form.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -113,7 +114,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called when you submit the form from the new.html page. The event that triggers this is the submit event on the submit button.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -126,7 +127,7 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // This function is defined on the article.js. This function is called when the form is submitted (when the button is clicked/submitted). The event that triggers it is the submit event on the button the event is attached to.
   article.insertRecord();
 }
 
