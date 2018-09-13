@@ -10,6 +10,9 @@ const app = express();
 // POST middleware
 app.use(express.urlencoded({ extended: true }));
 
+// DONE: Our files are in a public directory now so that we can load the static files in our browser window.
+app.use(express.static('public'));
+
 app.get('/', (request, response) => {
   response.send('GET request to root path!');
   response.send(request);
@@ -20,8 +23,6 @@ app.get('/new', (req, res) => {
   res.sendFile('/new.html', { root: './public' });
 });
 
-// DONE: Our files are in a public directory now so that we can load the static files in our browser window.
-app.use(express.static('public'));
 
 app.post('/articles', (request, response) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
@@ -38,6 +39,6 @@ app.use((req, res) => {
   res.sendFile('public/images/404cat.jpeg', { root: __dirname });
 });
 
-app.listen(3000, () => {
-  console.log('things are on port 3000!!');
+app.listen(PORT, () => {
+  console.log(`things are on port ${PORT}!!`);
 });
